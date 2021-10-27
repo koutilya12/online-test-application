@@ -1,17 +1,52 @@
 Online Test Application
 
 The Online Test Application system creates an application that enables users to provide online tests, review them, and display the results.
-Frontend:
-Frontend is built with html, css(Bootstrap), Angular, Angular material.
-Components :
-question-model: It displays the actual question model.
-quiz: It provides the user to attempt the test.
-review: It displays the questions attempted, questions correctly answered and the total score obtained.
+It contains 2 parts- front and backend.
 
-Backend: Springboot
+Frontend        :html, css(Bootstrap), Angular, Angular material.
+Components:
+quiz            : It displays the test description and provides the user to attempt the test.
+question-model  : It displays every single question as three operations i.e; proceed to next questio
+                  or previous question & end test (person can go to review component and cannot go back).
+review          :  It displays the questions attempted, questions answered in table and has opteration for submit test
+                   In submit test it displays questions attempted, questions answered,correct question and reason explaination in table,
+                   It also provides number of quesions correct,number of questions wrong,Total number of questions and total marks obtained 
+
+Domain:
+1 Quiz
+2 Question
+3 Answer
+
+Service:
+1 quiz-service : contains  two http services to get quiz and answers from the server.
+
+
+Additional Features :
+1 : Its has timer when timer ends it will automatically redirects to review component
+2 : Auto Save every 2 seconds so the answers will be saved in localStorage during quiz and user can reload the page. 
+
+Backend         : Java,Springboot
 Rest Api, that serves only 2 requests i.e; get quiz and get answers.
-get  quiz: questions are given in a json format to the server.
-get answers: answers and explanations to the quiz provided in json format, from the server to the client.
+The questions & answers which are present in json file are taken from the server in json format and given to the client.
+get  quiz       : questions are given in a json format from the server.
+get answers     : answers and explanations to the quiz provided in json format, from the server to the client.
 
-Services: 
+
+How to run instructions:
+Backend:
+1.  Quiz and answers are present json file located in backend\online-test\src\main\resources\data folder you can edit the json file add, 
+    modify questions and its answers.
+    You can also change timeLimit and marks.
+2.  Do maven clean install and run the application either in tomcat or with springBootAppication way
+3.  Backend Application will be up and running on localhost:8080 
+
+Frontend:
+1.  check node_module folder is present or not if it is not present do npm install.
+2.  Then start the application with npm start 
+3.  Frontend Application will be up and running on localhost:4200 
+
+Note: if any CORS origin error is found when hitting the request to server please enable  CORS in your browser by adding extension.
+
+
+
  
