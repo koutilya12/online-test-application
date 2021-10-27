@@ -1,0 +1,62 @@
+{
+  "id" : 1,
+  "headerText" : "Sample Test",
+  "timeLimit" : 30,
+  "questions" : [
+  	{
+  	  "id" : 1,
+  	  "question" : "What is the Capital of India?",
+  	  "options" : [
+		"New Delhi",
+		"Hyderabad",
+		"Mumbai",
+		"Chennai"  	  
+  	  ],
+  	  "marks" : 2
+  	},
+  	{
+  	  "id" : 2,
+  	  "question" : "How many states are in India?",
+  	  "options" : [
+		"26",
+		"27",
+		"28",
+		"29"  	  
+  	  ],
+  	  "marks" : 2
+  	},
+  	  	{
+  	  "id" : 3,
+  	  "question" : "What is known as Indian financial capital?",
+  	  "options" : [
+		"Mumbai",
+		"Bangalore",
+		"Kolkatta",
+		"Ahmedabad"  	  
+  	  ],
+  	  "marks" : 2
+  	},
+  	{
+  	  "id" : 4,
+  	  "question" : "What is the National Animal of India?",
+  	  "options" : [
+		"Lion",
+		"Tiger",
+		"Elephant",
+		"Zebra"  	  
+  	  ],
+  	  "marks" : 2
+  	},
+  	{
+  	  "id" : 5,
+  	  "question" : "Which is the most populous State in India?",
+  	  "options" : [
+		"Maharashtra",
+		"Telangana",
+		"Uttar Pradesh",
+		"West Bengal"  	  
+  	  ],
+  	  "marks" : 2
+  	}
+  ]
+}

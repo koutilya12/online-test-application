@@ -1,0 +1,24 @@
+<div *ngIf="question">
+    <p>Sno : {{index + 1}}</p>
+    <p>
+        {{question && question.question}}
+    </p>
+    <!-- <option *ngFor="let option of question.options" value="{{option}}">{{option}}</option> -->
+    <div *ngFor="let enum of question.options">
+        <label for="enum_answer_{{enum}}">
+          <input id="enum_answer_{{enum}}" [value]='enum' type="radio" name="enums" [(ngModel)]="question.answer">
+          {{enum}}
+        </label>
+      </div>
+      <div *ngIf="question.answer">
+        You have selected {{question.answer}}
+      </div>
+</div>
+
+<!-- <button type="button" class="btn btn-primary" (click)="sendToParent()"> Click me! </button> -->
+<button *ngIf = "showPreviousQuestion" type="button" class="btn btn-warning" (click)="proceedToPreviousQuestion()" > Previous Question </button>
+<button *ngIf = "showNextQuestion" type="button" class="btn btn-primary" (click)="proceedToNextQuestion()" > Next Question </button>
+<button type="button" class="btn btn-danger" (click)="endTest()"> End Test </button>
+
+
+

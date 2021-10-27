@@ -1,0 +1,28 @@
+ [
+  	{
+  	  "id" : 1,
+  	  "correctAnswer" : "New Delhi",
+  	  "explanation"   : "New Delhi, National Capital of India.It is situated in the North-Central part of the country on the West bank of the Yamuna River, adjacent to and just south of Delhi City." 
+  	},
+  	{
+  	  "id" : 2,
+  	  "correctAnswer" : "28",
+  	  "explanation"   : "There are 28 states and 8 Union territories in the Country."	  
+  	},
+  	  	{
+  	  "id" : 3,
+  	  "correctAnswer" : "Mumbai",
+  	  "explanation"   : "Mumbai is the Economic hub and financial centre of India."	
+  	},
+  	{
+  	  "id" : 4,
+  	  "correctAnswer" : "Tiger",
+  	  "explanation"   : "The magnificent Tiger, Panther tigris is a striped animal, the combination of grace, strength, agility and enormous power has earned the Tiger its pride of place as the National animal of India."	
+  	},
+  	{
+  	  "id" : 5,
+  	  "question" : "Which is the most populous State in India?",
+  	  "correctAnswer" : "Uttar Pradesh",
+  	  "explanation"   : "Uttar pradesh with a population of more than 166 million holds distinction of being the most populous state in the country followed by Maharashtra(97 million) and Bihar(83 million)."	
+  	}
+ ]

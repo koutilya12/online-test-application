@@ -1,0 +1,70 @@
+<div class="container">
+  <div class="row">
+    <h4 class="header-class">Review and Submit</h4>
+  </div>
+  <div class="row" >
+    <div *ngIf = "dataSource" >
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+
+      <!-- Sno Column -->
+      <ng-container matColumnDef="Sno">
+        <th mat-header-cell *matHeaderCellDef>SNo.</th>
+        <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="Question">
+        <th mat-header-cell *matHeaderCellDef>Question</th>
+        <td mat-cell *matCellDef="let element">{{ element.question }}</td>
+      </ng-container>
+
+      <!-- Options Column -->
+      <ng-container matColumnDef="Options">
+        <th mat-header-cell *matHeaderCellDef>Options</th>
+        <td mat-cell *matCellDef="let element">{{element.options}}</td>
+      </ng-container>
+
+      <!-- SelectedAnswer Column -->
+      <ng-container matColumnDef="SelectedAnswer">
+        <th mat-header-cell *matHeaderCellDef>SelectedAnswer</th>
+        <td mat-cell *matCellDef="let element">{{ element.answer }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="CorrectAnswer">
+        <th mat-header-cell *matHeaderCellDef>CorrectAnswer</th>
+        <td mat-cell *matCellDef="let element">{{ element.correctAnswer }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="Explaination">
+        <th mat-header-cell *matHeaderCellDef>Explaination</th>
+        <td mat-cell *matCellDef="let element">{{ element.explanation }}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+    </div>
+    <mat-paginator [pageSizeOptions]="[3]"
+    showFirstLastButtons 
+    aria-label="Select page of periodic elements">
+</mat-paginator>
+  </div>
+  <div class="row" *ngIf="!showEvaluation">
+    <button type="button" class="btn btn-danger" (click)="endTest()">
+      Submit Test
+    </button>
+  </div>
+  <div class ="row" *ngIf="showEvaluation && quiz && quiz.questions ">
+    <p>Total Questions = {{quiz.questions.length}}</p>
+    <p>Questions answered correctly = {{totalCorrect}}</p>
+    <p>Wrong answered Questions = {{totalWrong}}</p>
+    <p>Total marks obtained = {{totalMarks}}</p>
+  </div>
+  <div class="row" *ngIf="showEvaluation">
+    <button type="button" class="btn btn-danger" (click)="goToHomePage()">
+      Return to Home page
+    </button>
+  </div>
+</div>

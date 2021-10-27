@@ -1,0 +1,17 @@
+Online Test Application
+
+The Online Test Application system creates an application that enables users to provide online tests, review them, and display the results.
+Frontend:
+Frontend is built with html, css(Bootstrap), Angular, Angular material.
+Components :
+question-model: It displays the actual question model.
+quiz: It provides the user to attempt the test.
+review: It displays the questions attempted, questions correctly answered and the total score obtained.
+
+Backend: Springboot
+Rest Api, that serves only 2 requests i.e; get quiz and get answers.
+get  quiz: questions are given in a json format to the server.
+get answers: answers and explanations to the quiz provided in json format, from the server to the client.
+
+Services: 
+ 

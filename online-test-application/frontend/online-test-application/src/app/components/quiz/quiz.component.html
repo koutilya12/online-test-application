@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="d-flex justify-content-center">
+    <h3></h3>
+    <div *ngIf="quiz">
+      <div *ngIf="!testStarted && !showReview">
+        Test Description
+        <p>{{ quiz.headerText }}</p>
+        Time Limit
+        <p>{{ quiz.timeLimit }} mins</p>
+        Number of Questions
+        <p>{{ quiz.questions.length }}</p>
+        <p>Your choices are autosaved every 2 seconds</p>
+        <button type="button" class="btn btn-primary" (click)="startTest()">
+          Start Test
+        </button>
+      </div>
+      <div *ngIf="testStarted">
+        <h4> Timer {{timer}}</h4> 
+        <!-- hi
+            <button type="button" class="btn btn-lg btn-primary" (click)="goBack()">return</button> -->
+        <app-question-model
+          [index]="questionIndex"
+          [question]="currentQuestion"
+          (nextQuestion)="nextQuestion()"
+          (previousQuestion)="previousQuestion()"
+          (endTest)="reviewAndEndTest()"
+          [showNextQuestion]="quiz.questions.length > questionIndex + 1"
+          [showPreviousQuestion]="questionIndex != 0"
+        >
+        </app-question-model>
+      </div>
+      <div *ngIf="showReview">
+        <app-review [quiz]="quiz" (endTest)="endTest()"></app-review>
+      </div>
+    </div>
+
+    <!-- <ng-template #loading>
+    <div>
+        <button type="button" class="btn btn-primary" (click)="myFunction()"> Click me! </button>
+        <p>{{count}}</p>
+        <app-question-model [childCount] = count (cks)="receiveFromChild($event)" >  </app-question-model>
+
+    </div>
+    </ng-template> -->
+
+  </div>
+</div>
